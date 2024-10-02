@@ -20,7 +20,7 @@
         <transition name="quickFade" mode="out-in">
           <component
             :is="isOpen ? ChevronLeftIcon : ChevronRightIcon"
-            class="h-6 w-6 stroke-3"
+            class="h-6 w-6 stroke-2"
           ></component>
         </transition>
       </button>
