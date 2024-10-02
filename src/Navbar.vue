@@ -1,6 +1,6 @@
 <template>
-    <header class="bg-sky-500 text-slate-50 p-2 font-semibold">
-    <div class="container mx-auto flex gap-8">
+    <header class="bg-sky-500 text-slate-50 p-3 font-semibold">
+    <div class="container mx-auto flex items-center gap-8">
       <div class="brand">BANKROLL</div>
       <nav class="grow"></nav>
       <div class="actions flex gap-2 items-center">
