@@ -1,15 +1,14 @@
 <template>
-    <header class="bg-sky-500 text-slate-50 p-3 font-semibold">
+  <header class="bg-gradient-to-r from-cyan-800 to-cyan-600 text-white text-slate-50 p-3 font-semibold">
     <div class="container mx-auto flex items-center gap-8">
       <div class="brand">BANKROLL</div>
       <nav class="grow"></nav>
       <div class="actions flex gap-2 items-center">
         <div class="action relative">
-
           <div class="avatr w-7 h-7 bg-red-500 rounded-full" @click="showDropdown = ! showDropdown">
             
           </div>
-          <div class="dropdown absolute top-10 right-0 bg-sky-500 flex flex-col gap-2 px-2 py-2 rounded min-w-32" v-show="showDropdown">
+          <div class="dropdown absolute top-12 -right-2 bg-sky-500 flex flex-col gap-2 px-2 py-2 rounded min-w-32" v-show="showDropdown">
             <a href="ok" class="p-2 hover:bg-sky-600 rounded">Profile</a>
             <a href="ok" class="p-2 hover:bg-sky-600 rounded">Profile</a>
             <a href="ok" class="p-2 hover:bg-sky-600 rounded">Profile</a>
