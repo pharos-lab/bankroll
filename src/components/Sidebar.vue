@@ -5,23 +5,18 @@
             <SidebarLink label="Dashboard">
                 <HomeIcon class="w-6 h-6 stroke-2"></HomeIcon>
             </SidebarLink>
-            <SidebarLink>
-                <UserIcon class="w-6 h-6 stroke-2"></UserIcon>
+            <SidebarLink label="Tournament">
+                <TrophyIcon class="w-6 h-6 stroke-2"></TrophyIcon>
+            </SidebarLink>
+            <SidebarLink label="Games">
+                <FireIcon class="w-6 h-6 stroke-2"></FireIcon>
+            </SidebarLink>
+            <SidebarLink label="Settings">
+                <Cog6ToothIcon class="w-6 h-6 stroke-2"></Cog6ToothIcon>
             </SidebarLink>
         </nav>
 
-        <button class="
-            p-3
-            flex
-            hover:text-white hover:bg-cyan-700
-            bg-cyan-800
-            rounded
-            absolute
-            bottom-12
-            left-3
-            "
-            @click="isOpen = !isOpen"
-        >
+        <button class="p-3 flex hover:text-white hover:bg-cyan-700 bg-cyan-800 rounded absolute bottom-12 left-3" @click="isOpen = !isOpen" :title="isOpen ? 'Close' : 'Open'">
         <transition name="quickFade" mode="out-in">
           <component
             :is="isOpen ? ChevronLeftIcon : ChevronRightIcon"
@@ -35,7 +30,7 @@
 <script setup>
 import { ref, provide } from 'vue';
 import SidebarLink from './SidebarLink.vue';
-import { HomeIcon, UserIcon, ChevronLeftIcon, ChevronRightIcon } from '@heroicons/vue/24/solid'
+import { HomeIcon, ChevronLeftIcon, ChevronRightIcon, Cog6ToothIcon, TrophyIcon, FireIcon } from '@heroicons/vue/24/solid'
 
 const isOpen = ref(false)
 provide('isOpen', isOpen);

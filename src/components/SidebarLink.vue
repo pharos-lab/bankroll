@@ -1,5 +1,5 @@
 <template>
-    <a href="a" class="p-3 flex gap-4 hover:text-white hover:bg-cyan-800 rounded transition-colors">
+    <a href="a" class="p-3 flex gap-4 hover:text-white hover:bg-cyan-800 rounded transition-colors" :title="props.label">
         <span class="shrink-0">
             <slot></slot>
         </span>
