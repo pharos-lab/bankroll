@@ -1,18 +1,22 @@
 <template>
-    <a href="a" class="p-3 flex gap-4 hover:text-white hover:bg-cyan-800 rounded transition-colors" :title="props.label">
-        <span class="shrink-0">
-            <slot></slot>
-        </span>
-        <span :class="isExpended" class="transition-[opacity] duration-1000 whitespace-nowrap">
-            {{ props.label }}
-        </span>
+    <a href="a" class="p-3 flex gap-4 hover:text-white hover:bg-cyan-800 rounded transition-colors" 
+      :title="props.label"
+      :class="{ 'bg-cyan-800 text-white': props.active }"
+    >
+      <span class="shrink-0">
+          <slot></slot>
+      </span>
+      <span :class="isExpended" class="transition-[opacity] duration-1000 whitespace-nowrap">
+          {{ props.label }}
+      </span>
     </a>
 </template>
 <script setup>
 import { inject, computed } from 'vue';
 
 const props = defineProps({
-    label: String
+    label: String,
+    active: Boolean
 })
 
 const isOpen = inject('isOpen')
