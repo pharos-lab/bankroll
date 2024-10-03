@@ -37,7 +37,6 @@ const props = defineProps({
 })
 
 const charts = ref()
-const chart = ref()
 
 //defineExpose({chart})
 
@@ -61,7 +60,7 @@ const finalOptions = computed(() => {
 })
 
 onMounted(() => {
-    chart.value = new Chart(charts.value, {
+    const chart = new Chart(charts.value, {
         type: props.type,
         options: finalOptions.value,
         data: props.data,

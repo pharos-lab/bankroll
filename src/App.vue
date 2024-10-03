@@ -11,8 +11,13 @@
         </button>
       </h1>
 
-      <div class="charts mb-16">
-        <Chart :data="data" class="max-h-56" no-grid no-legend/>
+      <div class="charts mb-16 gap-4 flex">
+        <div class="chart grow">
+          <canvas ref="lineChart" class="max-h-56"></canvas>
+        </div>
+        <div class="chart basis-1/4">
+          <canvas ref="pieChart" class="max-h-56"></canvas>
+        </div>
       </div>
 
       <div class="stats flex gap-8">
@@ -27,11 +32,15 @@
 </template>
 
 <script setup>
+import { ref, onMounted } from 'vue'
+import Chart from 'chart.js/auto';
 import Navbar from './components/Navbar.vue';
 import Sidebar from './components/Sidebar.vue'
-import Chart from './components/Chart.vue'
 import Stat from './components/Stat.vue';
 import { PlusIcon } from '@heroicons/vue/24/solid'
+
+const lineChart = ref()
+const pieChart =ref()
 
 const rawData = [
     { year: 2010, count: 10 },
@@ -42,6 +51,7 @@ const rawData = [
     { year: 2015, count: 10 },
     { year: 2016, count: 90 },
 ]
+
 const data = {
     labels: rawData.map(row => row.year),
     datasets: [
@@ -54,4 +64,52 @@ const data = {
         }
     ]
 }
+
+const dataPie = {
+  labels: ['Gains', 'Perte'],
+  datasets: [{
+    data: [100, 50]
+  }]
+}
+
+onMounted(() => {
+  const lineChartOb = new Chart(lineChart.value, {
+      type: 'line',
+      data: data,
+      options: {
+        plugins: {
+          legend: {
+              display: false
+          }
+        },
+        scales: {
+          x: {
+            grid: {
+                display: false
+            },
+          },
+          y: {
+              grid: {
+                  display: false
+              },
+          }
+        }
+      }
+  })
+
+  const pieChartOb = new Chart(pieChart.value, {
+      type: 'doughnut',
+      data: dataPie,
+      options: {
+        plugins: {
+          legend: {
+            position: 'bottom'
+          }
+        }
+      }
+  })
+
+})
+
+
 </script>
