@@ -13,10 +13,10 @@
 
       <div class="charts mb-16 gap-4 flex">
         <div class="chart grow">
-          <canvas ref="lineChart" class="max-h-56"></canvas>
+         <Charts :data="data" no-grid class="max-h-56" no-legend/>
         </div>
         <div class="chart basis-1/4">
-          <canvas ref="pieChart" class="max-h-56"></canvas>
+         <Charts :data="dataPie" type="doughnut" class="max-h-56" legend-position="bottom"/>
         </div>
       </div>
 
@@ -26,6 +26,8 @@
         <Stat label="Games" stat="6" />
         <Stat label="Games" stat="6" />
       </div>
+
+      
 
     </section>
   </main>
@@ -37,6 +39,7 @@ import Chart from 'chart.js/auto';
 import Navbar from './components/Navbar.vue';
 import Sidebar from './components/Sidebar.vue'
 import Stat from './components/Stat.vue';
+import Charts from './components/Charts.vue';
 import { PlusIcon } from '@heroicons/vue/24/solid'
 
 const lineChart = ref()

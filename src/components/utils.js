@@ -130,4 +130,14 @@ const noTooltip = {
         }
     }
 }
-export {noLegend, noGrid, noGridX, noGridY, noRadialGrid, noTicks, noTicksX, noTicksY, noRadialTicks, isBlank, noTooltip }
+
+const legendPosition = (pos) => {
+    return {
+        plugins: {
+            legend: {
+            position: pos
+            }
+      }
+    }
+}
+export { noLegend, noGrid, noGridX, noGridY, noRadialGrid, noTicks, noTicksX, noTicksY, noRadialTicks, isBlank, noTooltip, legendPosition }
