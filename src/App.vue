@@ -13,7 +13,7 @@
 
       <div class="charts mb-16 gap-4 flex">
         <div class="chart grow">
-         <Charts :data="data" no-grid class="max-h-56" no-legend/>
+         <Charts :data="data" no-grid class="max-h-56" title=""/>
         </div>
         <div class="chart basis-1/4">
          <Charts :data="dataPie" type="doughnut" class="max-h-56" legend-position="bottom"/>
@@ -21,7 +21,7 @@
       </div>
 
       <div class="stats flex gap-8">
-        <Stat label="Games" stat="6" />
+        <Stat label="Bankroll" stat="8 567" devise="$"/>
         <Stat label="Tournament" stat="6" />
         <Stat label="Games" stat="6" />
         <Stat label="Games" stat="6" />
@@ -46,24 +46,24 @@ const lineChart = ref()
 const pieChart =ref()
 
 const rawData = [
-    { year: 2010, count: 10 },
-    { year: 2011, count: 20 },
-    { year: 2012, count: 60 },
-    { year: 2013, count: 40 },
-    { year: 2014, count: 80 },
-    { year: 2015, count: 10 },
-    { year: 2016, count: 90 },
+    { game: 2010, count: 100 },
+    { game: 2011, count: 200 },
+    { game: 2012, count: 180 },
+    { game: 2013, count: 240 },
+    { game: 2014, count: 290 },
+    { game: 2015, count: 230 },
+    { game: 2016, count: 310 },
 ]
 
 const data = {
-    labels: rawData.map(row => row.year),
+    labels: rawData.map(row => row.game),
     datasets: [
         {
             fill: 'origin',
-            label: 'test 1',
+            label: 'Money',
             data: rawData.map(row => row.count),
             backgroundColor: '#0891b2',
-            tension: 0.1
+            tension: .2
         }
     ]
 }
@@ -74,45 +74,4 @@ const dataPie = {
     data: [100, 50]
   }]
 }
-
-onMounted(() => {
-  const lineChartOb = new Chart(lineChart.value, {
-      type: 'line',
-      data: data,
-      options: {
-        plugins: {
-          legend: {
-              display: false
-          }
-        },
-        scales: {
-          x: {
-            grid: {
-                display: false
-            },
-          },
-          y: {
-              grid: {
-                  display: false
-              },
-          }
-        }
-      }
-  })
-
-  const pieChartOb = new Chart(pieChart.value, {
-      type: 'doughnut',
-      data: dataPie,
-      options: {
-        plugins: {
-          legend: {
-            position: 'bottom'
-          }
-        }
-      }
-  })
-
-})
-
-
 </script>
