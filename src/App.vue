@@ -1,18 +1,27 @@
 <template>
   <Navbar/>
-  <main class="grow flex text-cyan-900">
+  <main class="grow flex text-cyan-800">
     <Sidebar />
     <section class="grow h-full overflow-auto bg-slate-50 p-8">
-      <h1 class="font-bold mb-8 flex justify-between">
-       <span class="text-2xl">POKER</span>
-       <button class="px-3 py-2 border-2 border-cyan-600 bg-cyan-600 rounded hover:bg-white hover:text-cyan-600 transition-colors text-white flex items-center gap-2">
-        <PlusIcon class="size-5"></PlusIcon>
-        New
-      </button>
+      <h1 class="font-bold flex justify-between mb-8">
+        <span class="text-2xl">POKER</span>
+        <button class="px-2 py-1 border-2 border-cyan-600 bg-cyan-600 rounded hover:bg-white hover:text-cyan-600 transition-colors text-white flex items-center gap-2">
+          <PlusIcon class="size-5"></PlusIcon>
+          New
+        </button>
       </h1>
-      <div class="charts">
-        <Chart :data="data" class="max-h-56" no-grid-x no-legend/>
+
+      <div class="charts mb-16">
+        <Chart :data="data" class="max-h-56" no-grid no-legend/>
       </div>
+
+      <div class="stats flex gap-8">
+        <Stat label="Games" stat="6" />
+        <Stat label="Tournament" stat="6" />
+        <Stat label="Games" stat="6" />
+        <Stat label="Games" stat="6" />
+      </div>
+
     </section>
   </main>
 </template>
@@ -21,6 +30,7 @@
 import Navbar from './components/Navbar.vue';
 import Sidebar from './components/Sidebar.vue'
 import Chart from './components/Chart.vue'
+import Stat from './components/Stat.vue';
 import { PlusIcon } from '@heroicons/vue/24/solid'
 
 const rawData = [
@@ -38,7 +48,9 @@ const data = {
         {
             fill: 'origin',
             label: 'test 1',
-            data: rawData.map(row => row.count)
+            data: rawData.map(row => row.count),
+            backgroundColor: '#0891b2',
+            tension: 0.1
         }
     ]
 }

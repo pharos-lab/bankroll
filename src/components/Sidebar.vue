@@ -32,7 +32,7 @@ import { ref, provide } from 'vue';
 import SidebarLink from './SidebarLink.vue';
 import { HomeIcon, ChevronLeftIcon, ChevronRightIcon, Cog6ToothIcon, TrophyIcon, FireIcon } from '@heroicons/vue/24/solid'
 
-const isOpen = ref(false)
+const isOpen = ref(true)
 provide('isOpen', isOpen);
 
 </script>
