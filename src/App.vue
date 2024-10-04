@@ -12,24 +12,24 @@
         </button>
       </h1>
 
-      <div class="charts mb-8 gap-4 flex">
-        <div class="chart relative w-3/4 shadow rounded bg-white p-4">
+      <div class="charts mb-8 grid grid-cols-4 gap-8">
+        <div class="chart relative col-span-3 shadow rounded bg-white p-4">
          <Charts :data="data" no-grid class="max-h-56" title=""/>
         </div>
 
-        <div class="chart w-1/4 relative shadow rounded bg-white p-4">
+        <div class="chart relative shadow rounded bg-white p-4">
          <Charts :data="dataPie" type="doughnut" class="max-h-56" legend-position="bottom"/>
         </div>
       </div>
 
-      <div class="stats flex gap-8 mb-12">
+      <div class="stats grid grid-cols-4 gap-8 mb-12">
         <Stat label="Bankroll" stat="8 567" devise="$"/>
         <Stat label="Tournament" stat="6" />
         <Stat label="Games" stat="6" />
         <Stat label="Games" stat="6" />
       </div>
 
-      <div class="stats">
+      <div class="stats mb-12">
         <h3 class="font-bold text-xl mb-8">Last 5 Cash Games</h3>
 
         <div class="flex gap-8">
@@ -51,6 +51,11 @@
             </div>
           </div>
         </div>
+      </div>
+
+      <div class="last">
+        <h3>Last Games</h3>
+        <Table />
       </div>
 
       
