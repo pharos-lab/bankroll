@@ -33,12 +33,22 @@
         <h3 class="font-bold text-xl mb-8">Last 5 Cash Games</h3>
 
         <div class="flex gap-8">
-          <div class="chart relative w-1/2 shadow rounded bg-white p-2">
-            <Charts :data="databar" type="bar" class="max-h-56" title="" no-grid no-ticks-y/>
+          <div class="chart relative w-1/2 shadow rounded bg-white p-2 self-start">
+            <Charts :data="databar" type="bar"  title="" no-grid no-ticks-y/>
           </div>
 
-          <div class="list w-1/2 relative">
-            
+          <div class="list w-1/2 relative shadow rounded bg-white divide-y">
+            <div class="item flex py-2 px-6 justify-between cursor-pointer hover:bg-slate-100" v-for="index in 5" :key="index">
+              <div class="info">
+                <p class=" font-bold">Cash Game - Julien</p>
+                <p class="text-slate-500 text-sm">6 joueurs le 17/05</p>
+              </div>
+
+              <div class="status flex gap-4 items-center justify-center font-bold">
+                <p class="px-4 py-1 border border-emerald-500 rounded-full text-emerald-500 text-sm">Gain</p>
+                <ChevronRightIcon class="w-5 h-5"></ChevronRightIcon>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -57,6 +67,7 @@ import Sidebar from './components/Sidebar.vue'
 import Stat from './components/Stat.vue';
 import Charts from './components/Charts.vue';
 import { PlusIcon } from '@heroicons/vue/24/solid'
+import { ChevronRightIcon } from '@heroicons/vue/24/outline';
 
 const lineChart = ref()
 const pieChart =ref()
