@@ -1,6 +1,6 @@
 <template>
   <Navbar/>
-  <main class="grow flex text-cyan-800">
+  <main class="grow flex text-cyan-800 h-full overflow-hidden">
     <Sidebar />
     <section class="grow h-full overflow-auto bg-slate-50 p-8">
       <h1 class="font-bold flex justify-between mb-6">
@@ -12,7 +12,7 @@
         </button>
       </h1>
 
-      <div class="charts mb-12 gap-4 flex">
+      <div class="charts mb-8 gap-4 flex">
         <div class="chart relative w-3/4 shadow rounded bg-white p-4">
          <Charts :data="data" no-grid class="max-h-56" title=""/>
         </div>
@@ -22,7 +22,7 @@
         </div>
       </div>
 
-      <div class="stats flex gap-8 mb-16">
+      <div class="stats flex gap-8 mb-12">
         <Stat label="Bankroll" stat="8 567" devise="$"/>
         <Stat label="Tournament" stat="6" />
         <Stat label="Games" stat="6" />

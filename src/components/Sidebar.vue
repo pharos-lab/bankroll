@@ -1,5 +1,5 @@
 <template>
-    <section class="sidebar h-full shrink-0 bg-cyan-900 text-slate-300 font-semibold w-18 pt-8 p-3 relative transition-[width] duration-1000"
+    <section class="sidebar max-h-full overflow-auto shrink-0 bg-cyan-900 text-slate-300 font-semibold w-18 pt-8 p-3 relative transition-[width] duration-1000"
         :class="{ 'w-56': isOpen }">
         <nav class="flex flex-col gap-2">
             <SidebarLink label="Dashboard" active>
