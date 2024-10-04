@@ -45,7 +45,7 @@
               </div>
 
               <div class="status flex gap-4 items-center justify-center font-bold">
-                <p class="px-4 py-1 border border-emerald-500 rounded-full text-emerald-500 text-sm">Gain</p>
+                <p class="px-4 py-1 border border-emerald-500 rounded-full text-emerald-500 text-sm bg-emerald-50">Gain</p>
                 <ChevronRightIcon class="w-5 h-5"></ChevronRightIcon>
               </div>
             </div>
@@ -66,11 +66,11 @@
 
 <script setup>
 import { ref, onMounted } from 'vue'
-import Chart from 'chart.js/auto';
 import Navbar from './components/Navbar.vue';
 import Sidebar from './components/Sidebar.vue'
 import Stat from './components/Stat.vue';
 import Charts from './components/Charts.vue';
+import Table from './components/Table.vue'
 import { PlusIcon } from '@heroicons/vue/24/solid'
 import { ChevronRightIcon } from '@heroicons/vue/24/outline';
 
