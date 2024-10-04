@@ -12,10 +12,10 @@
       </h1>
 
       <div class="charts mb-16 gap-4 flex">
-        <div class="chart grow">
+        <div class="chart relative w-3/4">
          <Charts :data="data" no-grid class="max-h-56" title=""/>
         </div>
-        <div class="chart basis-1/4">
+        <div class="chart w-1/4 relative">
          <Charts :data="dataPie" type="doughnut" class="max-h-56" legend-position="bottom"/>
         </div>
       </div>
