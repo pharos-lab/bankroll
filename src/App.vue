@@ -33,7 +33,7 @@
         <h3 class="font-bold text-xl mb-8">Last 5 Cash Games</h3>
 
         <div class="flex gap-8">
-          <div class="chart relative w-1/2 shadow rounded bg-white p-2 self-start">
+          <div class="chart relative w-1/2 shadow rounded bg-white p-2 self-start max-h-80">
             <Charts :data="databar" type="bar"  title="" no-grid no-ticks-y/>
           </div>
 
@@ -54,8 +54,8 @@
       </div>
 
       <div class="last">
-        <h3>Last Games</h3>
-        <Table />
+        <h3 class="font-bold text-xl mb-8">Last Games</h3>
+        <Table :data="dataTable"  />
       </div>
 
       
@@ -76,6 +76,34 @@ import { ChevronRightIcon } from '@heroicons/vue/24/outline';
 
 const lineChart = ref()
 const pieChart =ref()
+
+const dataTable = [
+  {
+    nom: 'mth',
+    prenom: 'mth',
+    age: 18,
+    action: 'success'
+  },
+  {
+    nom: 'mth',
+    prenom: 'mth',
+    age: 18,
+    action: 'success'
+  },
+  {
+    nom: 'mth',
+    prenom: 'mth',
+    age: 18,
+    action: 'success'
+  },{
+    nom: 'mth',
+    prenom: 'mth',
+    age: 18,
+    action: 'success'
+  }
+  
+]
+const labels = ['name', 'fisrt name', 'age', 'actions']
 
 const rawData = [
     { game: 2010, count: 100 },
