@@ -55,7 +55,7 @@
 
       <div class="last">
         <h3 class="font-bold text-xl mb-8">Last Games</h3>
-        <Table :data="dataTable"  />
+        <Table :data="dataTable"  search="nom"/>
       </div>
 
       
@@ -101,7 +101,7 @@ const dataTable = [
     age: 18,
     action: 'success'
   }
-  
+
 ]
 const labels = ['name', 'fisrt name', 'age', 'actions']
 
