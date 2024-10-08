@@ -55,7 +55,16 @@
 
       <div class="last">
         <h3 class="font-bold text-xl mb-8">Last Games</h3>
-        <Table :data="dataTable"  search="nom"/>
+        <Table class="mb-16"/>
+        <DataTable
+          :headers="tableHeaders"
+          :rows="tableRows"
+          :itemsPerPage="5"
+          :filters="tableFilters"
+          @edit="handleEdit"
+          @delete="handleDelete"
+          @bulkDelete="handleBulkDelete"
+        />
       </div>
 
       
@@ -71,11 +80,44 @@ import Sidebar from './components/Sidebar.vue'
 import Stat from './components/Stat.vue';
 import Charts from './components/Charts.vue';
 import Table from './components/Table.vue'
+
+import DataTable from './components/DataTable.vue';
+
+
 import { PlusIcon } from '@heroicons/vue/24/solid'
 import { ChevronRightIcon } from '@heroicons/vue/24/outline';
 
 const lineChart = ref()
 const pieChart =ref()
+
+
+const tableHeaders = ref([
+  { label: 'Nom', key: 'name' },
+  { label: 'Âge', key: 'age' },
+  { label: 'Email', key: 'email' },
+]);
+
+const tableRows = ref([
+  { name: 'John Doe', age: 25, email: 'john@example.com' },
+  { name: 'Jane Doe', age: 30, email: 'jane@example.com' },
+  // Autres données...
+]);
+
+const tableFilters = ref([
+  { label: 'Âge', key: 'age', options: ['20', '25', '30'] },
+]);
+
+const handleEdit = (row) => {
+  console.log('Modifier', row);
+};
+
+const handleDelete = (row) => {
+  console.log('Supprimer', row);
+};
+
+const handleBulkDelete = (rows) => {
+  console.log('Supprimer en masse', rows);
+};
 
 const dataTable = [
   {

@@ -1,7 +1,7 @@
 <template>
     <div class="table w-full">
-        
-        <table class="w-full rounded overflow-hidden shadow">
+        <p v-if="props.data.length === 0">Aucune donnée disponible</p>
+        <table class="w-full rounded overflow-hidden shadow" v-else>
             <thead class="bg-slate-200">
                 <tr class="rounded">
                     <th v-for="(label, index) in (props.labels || Object.keys(props.data[0]))" class="px-6 py-3 text-left" :key="index">
@@ -26,7 +26,10 @@
 import { ChevronDownIcon } from '@heroicons/vue/24/solid';
 
 const props = defineProps({
-    data: Array,
+    data: {
+        type: Array,
+        default: []
+    },
     labels: Array,
     search: String
 })
